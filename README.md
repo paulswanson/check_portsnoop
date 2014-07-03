@@ -10,7 +10,7 @@ So, you monitor a group of hosts. But that's even worse! Now if any one host is 
 
 With check_portsnoop you can monitor a group of hosts and you will only get a CRITICAL when they're all down.
 
-check_portsnoop works in a simple, predictable manner. Give it a lists of ports, in the format host:port, and it will return the group's collective status. It's also very fast, thanks to Go's concurrency. So it's possible to test large numbers of hosts / ports quickly.
+check_portsnoop works in a simple, predictable manner. Give it a list of ports, in the format host:port, and it will return the group's collective status. It's also very fast, thanks to Go's concurrency. So it's possible to test large numbers of hosts / ports quickly.
 
 Currently it's been written to solve a specific problem so full Nagios threshold configuration is not yet supported, but there's scope for that. Currently CRITICAL is all ports failed, WARNING only one port active, OK when two or more ports are active. If only one port is specified then it'll be either OK or CRITICAL depending on its status.
 
