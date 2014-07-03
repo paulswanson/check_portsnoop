@@ -10,8 +10,8 @@ So, you monitor a group of hosts. But that's even worse! Now if any one host is 
 
 With check_portsnoop you can monitor a group of hosts and you will only get a CRITICAL when they're all down.
 
-check_portsnoop works in a simple, predictable manner. Give it a lists of ports, in the format host:port, and it will return the total number of ports that were accesible. It's also very fast, thanks to Go's concurrency. So it's possible to test large numbers of hosts / ports quickly.
+check_portsnoop works in a simple, predictable manner. Give it a lists of ports, in the format host:port, and it will return the group's collective status. It's also very fast, thanks to Go's concurrency. So it's possible to test large numbers of hosts / ports quickly.
 
-Currently it's been written to solve a specific problem so full Nagios threshold configuration is not yet supported, but there's scope for that. Currently CRITICAL is all ports failed, WARNING only one ports active, OK when two or more ports are active.
+Currently it's been written to solve a specific problem so full Nagios threshold configuration is not yet supported, but there's scope for that. Currently CRITICAL is all ports failed, WARNING only one port active, OK when two or more ports are active. If only one port is specified then it'll be either OK or CRITICAL depending on its status.
 
 Why test a TCP port instead of using ping? Because ping packets are often dropped by certain network devices during times of high traffic or CPU load. Quickly checking a specific port is a more reliable and real-world test.
